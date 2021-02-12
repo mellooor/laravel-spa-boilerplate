@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "d5cae954-3728-4251-95b6-fd04ca660d17",
+		"name": "Laravel SPA Boilerplate End Points",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "lacey.hickle@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Shortbread",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/login",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"login"
+					],
+					"query": [
+						{
+							"key": "XDEBUG_SESSION_START",
+							"value": "PHPSTORM",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Test McTesterton II",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "testo6@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/register",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"register"
+					],
+					"query": [
+						{
+							"key": "XDEBUG_SESSION_START",
+							"value": "PHPSTORM",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/logout",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "testo6@example.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/forgot-password",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"forgot-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "{{APP_BASE_URL}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "current_password",
+							"value": "password2",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password23",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "password2",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/user/password",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"user",
+						"password"
+					],
+					"query": [
+						{
+							"key": "XDEBUG_SESSION_START",
+							"value": "PHPSTORM",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "testo6@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Shortbread2",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "Shortbread2",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/reset-password",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Profile Information",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "{{APP_BASE_URL}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "testo4@example.com",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/user/profile-information",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"user",
+						"profile-information"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Referer",
+						"value": "{{APP_BASE_URL}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/user",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"user"
+					],
+					"query": [
+						{
+							"key": "XDEBUG_SESSION_START",
+							"value": "PHPSTORM",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "{{APP_BASE_URL}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/user",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Individual User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "{{APP_BASE_URL}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_BASE_URL}}/{{API_VERSION}}/user/31",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"{{API_VERSION}}",
+						"user",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: 'http://www.some-domain.com/sanctum/csrf-cookie',",
+					"    method: 'GET'",
+					"}, function (error, response, { cookies }) {",
+					"    if (!error) {",
+					"        pm.environment.set('xsrf-token', cookies.get('XSRF-TOKEN'))",
+					"    }",
+					"})"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
